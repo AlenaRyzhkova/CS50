@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote information
+{% endblock %}
+
+{% block main %}
+    <h3>Quote Information</h3>
+    <table class = "table table-sm">
+        <thead>
+            <tr>
+                <th>Company name</th>
+                <th>Price</th>
+                <th>Symbol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{name}}</td>
+                <td>{{price}}</td>
+                <td>{{symbol}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

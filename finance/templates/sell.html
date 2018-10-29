@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <h4>Choose the quote for selling and type number of shares</h4>
+        <div class="list-group">
+            {% for quote in quotesPortfolio %}
+                <label><input type="radio" name="symbol" value= {{quote.stockSymbol}} >{{quote.stockSymbol}}<small>(avaible {{quote.numberShares}}) </small></label>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Number of shares for selling" type="number"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+
+{% endblock %}

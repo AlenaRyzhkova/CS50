@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+            <p><h3><h3>Choose files for comparing</h3></p>
+            <input type="file" name="file1"><br>
+            <input type="file" name="file2"><br>
+
+            <p><h3>Choose a way of comparing</h3></p>
+            <div class="form-group">
+                <select class="custom-select" name="algorithm" onchange="showHide(this)">
+                    <option value="" selected>Choose algorithm</option>
+                    <option value="lines">lines</option>
+                    <option value="sentences">sentences</option>
+                    <option value="substrings">substrings</option>
+                </select>
+            </div>
+
+            <div class="from-group" id="length-container">
+                <label for="length">Type the length of the substring</label>
+                <input type="number" name="length" id="length" class="from-control">
+            </div>
+
+            <div class="form-gtoup">
+                <button type="submit" class="btn">Compare</button>
+            </div>
+
+        </form>
+    </div>
+
+
+{% endblock %}

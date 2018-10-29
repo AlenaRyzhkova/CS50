@@ -1,0 +1,35 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+    The longest wirld in English language acording to the Oxford Dictionary
+1.  According to its man page, what does `getrusage` do?
+    returns resource usage measures
+2.  Per that same man page, how many members are in a variable of type `struct rusage`?
+    16
+
+3.  Why do you think we pass `before` and `after` by reference (instead of by value) to `calculate`, even though we're not changing their contents?
+    Because rusage is a big sructure. And if you pass it by value it can spent a lot of resources for copies
+
+4.  Explain as precisely as possible, in a paragraph or more, how 'main' goes about reading words from a file.
+    In other words, convince us that you indeed understand how that function's 'for' loop works.
+
+    First of all we have array of char(named word) prepared for put whole word from text here.
+    More over we have index for this array - in fact it's quontity of letters that we've put in array 'word'.
+    In main's 'for' loop we consistently read symbols from text char by char, while don't bump end of the file.
+    If we meet alphabetic symbol or apostrophe (into the word) we will put it into 'word' and encrease index.
+    If we see that word too long for real word (>45chars), we will scrolling up to the end this huge word and set index=0, preparing to write word.
+    else if we meet digit we just scrolling while loop until meet sign of new word, we just comsumer reminder of this 'uncorrect word'. Of course we set index equeal 0.
+    If writing symbols to the 'word' we meet null symbol ('\0'), it will mean that word is complete. We will increase counter, checks misspelling and set index to '0'.
+
+
+5.  Why do you think we used 'fgetc' to read each word's characters one at a time rather than use 'fscanf' with a format string like '"%s"'
+    to read whole words at a time? Put another way, what problems might arise by relying on 'fscanf' alone?
+    'fcsanf' will be scan all string up to the a space (and ect.). It doesn't matter if we met digits or too long sequense of letters, it will be
+    'word' for scanf. 'fgetc' and char by char movement gives more control.
+
+6.  Why do you think we declared the parameters for 'check' and 'load' as 'const'?
+    Parameters of this functions are pointers. If they aren't constants we will be able to change these pointers' value.
+    It's absolutelly incorrect. Because we must not change whe value
+
+7.  TODO
+8.  TODO
+9.  TODO
+10. TODO

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h3>Your portfolio</h3>
+
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th>Type of transaction</th>
+                <th>Stock symbol</th>
+                <th>Price by share</th>
+                <th>Number of shares</th>
+                <th>Transaction date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tran in trans %}
+                    <tr>
+                        <td>{{tran.typeOperation}}</td>
+                        <td>{{tran.stockSymbol}}</td>
+                        <td>{{tran.priceByShare}}</td>
+                        <td>{{tran.numShares}}</td>
+                        <td>{{tran.datatimePurchase}}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
